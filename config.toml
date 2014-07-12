@@ -19,7 +19,7 @@ assets = "/opt/influxdb/current/admin"
 
 # Configure the http api
 [api]
-port     = 8086    # binding is disabled if the port isn't set
+port = 8086    # binding is disabled if the port isn't set
 # ssl-port = 8084    # Ssl support is enabled if you set a port and cert
 # ssl-cert = /path/to/cert.pem
 
@@ -32,10 +32,10 @@ read-timeout = "5s"
 
   # Configure the graphite api
   [input_plugins.graphite]
-  enabled = false
-  # port = 2003
-  # database = ""  # store graphite data in this database
-  # udp_enabled = true # enable udp interface on the same port as the tcp interface
+  enabled     = <--GRAPHITE_ENABLED-->
+  port        = <--GRAPHITE_PORT-->
+  database    = "<--GRAPHITE_DATABASE-->"  # store graphite data in this database
+  udp_enabled = <--GRAPHITE_UDP_ENABLED--> # enable udp interface on the same port as the tcp interface
 
   [input_plugins.udp]
   enabled = false
@@ -50,7 +50,7 @@ read-timeout = "5s"
 port = 8090
 
 # Where the raft logs are stored. The user running InfluxDB will need read/write access.
-dir  = "/data/raft"
+dir = "/data/raft"
 
 # election-timeout = "1s"
 
@@ -165,7 +165,7 @@ write-batch-size = 5000000
 
 [wal]
 
-dir   = "/data/wal"
+dir = "/data/wal"
 flush-after = 1000 # the number of writes after which wal will be flushed, 0 for flushing on every write
 bookmark-after = 1000 # the number of writes after which a bookmark will be created
 
