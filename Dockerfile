@@ -1,6 +1,6 @@
 FROM ubuntu:trusty
 MAINTAINER Feng Honglin <hfeng@tutum.co>
- 
+
 # Install InfluxDB
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y wget
@@ -23,6 +23,6 @@ EXPOSE 8090
 # Protobuf port (for clustering, don't expose publicly!)
 EXPOSE 8099
 
-VOLUME ["/data"]
+VOLUME ["/data", "log"]
 
 CMD ["/usr/bin/influxdb", "-config=/config/config.toml"]
