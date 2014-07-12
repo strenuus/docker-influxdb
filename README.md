@@ -1,4 +1,4 @@
-tutum-docker-influxdb
+strenuus-docker-influxdb
 =====================
 InfluxDB image
 
@@ -6,13 +6,13 @@ InfluxDB image
 Usage
 -----
 
-To create the image `tutum/influxdb`, execute the following command on tutum-docker-influxdb folder:
+To create the image `strenuus/influxdb`, execute the following command on strenuus-docker-influxdb folder:
 
-    docker build -t tutum/influxdb .
+    docker build -t strenuus/influxdb .
 
 You can now push new image to the registry:
-    
-    docker push tutum/influxdb
+
+    docker push strenuus/influxdb
 
 
 Running your InfluxDB image
@@ -20,7 +20,7 @@ Running your InfluxDB image
 
 Start your image binding the external ports `8083` and `8086` in all interfaces to your container. Ports `8090` and `8099` are only used for clustering and should not be exposed to the internet.
 
-    docker run -d -p 8083:8083 -p 8086:8086 --expose 8090 --expose 8099 tutum/influxdb
+    docker run -d -p 8083:8083 -p 8086:8086 --expose 8090 --expose 8099 strenuus/influxdb
 
 
 Configuring your InfluxDB

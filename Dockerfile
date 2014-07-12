@@ -1,5 +1,5 @@
 FROM ubuntu:trusty
-MAINTAINER Feng Honglin <hfeng@tutum.co>
+MAINTAINER Strenuus <nobody@strenuus.com>
 
 # Install InfluxDB
 RUN apt-get update
